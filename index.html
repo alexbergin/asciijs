@@ -3,13 +3,23 @@
     <head>
         <script src="ascii.js"></script>
         <style>
-            html {
+            
+            html , body {
                 font-family: monospace;
+                padding: 0;
+                margin: 0;
             }
+            
+            #textOutput {
+                position: absolute;
+                top: 0;
+                left: 530px;
+            }
+            
         </style>
     </head>
     <body>
-        <img id="coolcat" src="soap.jpg" />
+        <img id="coolgif" src="38.gif" />
         <div id="textOutput"></div>
     </body>
     <script>
@@ -17,10 +27,10 @@
             var myASCII = new ascii();
         
             myASCII.set.target( document.getElementById("textOutput"));
-            myASCII.set.width( 512 );
+            myASCII.set.width( 65 );
             
             setInterval( function(){
-                myASCII.gen( document.getElementById("coolcat"));
+                myASCII.gen( document.getElementById("coolgif"));
             } , 1000 / 24 );
         }
     </script>
