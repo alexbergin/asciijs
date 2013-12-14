@@ -50,6 +50,16 @@ Determines what ascii theme will be used to generate your outputted text. Themes
     
     myASCII.set.theme( string );
     
+The current list of themes is: `default` , `defaultInvert` , `mono` , & `dot`.
+    
+------------
+
+### Color / Monochromatic
+
+Applys the color of the pixel the character is replacing to the text if set to false, uses the containers text color if set to true. Very render intensive to display in full color, poor for animations.
+
+    myASCII.set.mono( bool );
+    
 ------------
 
 ### Target

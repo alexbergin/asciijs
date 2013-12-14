@@ -22,20 +22,12 @@ var ascii = function(){
     
     var data = {
         themes: [
-            { 
+            {
                 id: "default",
-                char: " ._o=+x%@m",
-                src: "alex bergin",
-            },{
-                id: "invert",
-                char: "m@%x+=0_. ",
-                src: "alex bergin",
-            },{
-                id: "alt",
                 char: " .`,'-_~;:!/+=O0X8M",
                 src: "alex bergin",
             },{
-                id: "altInvert",
+                id: "defaultInvert",
                 char: "M8X0O=+/!:;~_-',`. ",
                 src: "alex bergin",
             },{
