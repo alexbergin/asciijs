@@ -31,7 +31,7 @@ Next we take our image and pass it to the gen function of asciijs
         window.onload = function(){
             var myASCII = new ascii();
             myASCII.set.target( document.getElementById("textholder") );
-            myASCII.gen( document.getElementById("catimage.png") );
+            myASCII.gen( document.getElementById("catimage") );
         }
     </script>
     
