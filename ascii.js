@@ -21,15 +21,26 @@ var ascii = function(){
     var data = {
         themes: [
             { 
-                id: "defult",
+                id: "default",
                 char: " ._o=+x%@m",
                 src: "alex bergin",
-            },
+            },{
+                id: "invert",
+                char: "m@%x+=0_. ",
+                src: "alex bergin",
+            },{
+                id: "alt",
+                char: " .,;:-'!+=/OXM",
+                src: "alex bergin",
+            },{
+                id: "altInvert",
+                char: "MXO/=+!’-:;,. ",
+                src: "alex bergin",
+            }
         ],
     };
     
     // actually do things here
-    
     this.gen = function( src ){
         
         // set height automatically if not defined
@@ -108,7 +119,7 @@ var ascii = function(){
         theme: function( type ){
             var err = true;
             for( var i = 0 , idur = data.themes.length ; i < idur ; i++ ){
-                if ( data.themes[i].name == type ){
+                if ( data.themes[i].id == type ){
                     err = false;
                     pref.theme = i;
                 }
