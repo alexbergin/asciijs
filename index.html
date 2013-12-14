@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="ascii.js"></script>
+        <style>
+            html {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <img id="coolcat" src="soap.jpg" />
+        <div id="textOutput"></div>
+    </body>
+    <script>
+        window.onload = function(){
+            var myASCII = new ascii();
+        
+            myASCII.set.target( document.getElementById("textOutput"));
+            myASCII.set.width( 512 );
+            
+            setInterval( function(){
+                myASCII.gen( document.getElementById("coolcat"));
+            } , 1000 / 24 );
+        }
+    </script>
+</html>
