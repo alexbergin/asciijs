@@ -47,17 +47,17 @@ var ascii = function(){
         // might need to adjust 'pref.ratio' ( width / height of characters) depending on your typeface
         
         // default the height
-        if ( pref.widthHasBeenSet == true && pref.heightHasBeenSet == false ){
+        if ( pref.widthHasBeenSet === true && pref.heightHasBeenSet === false ){
             pref.height = Math.round(( pref.width * ( src.width / src.height )) * pref.ratio );
         }
         
         // default the width
-        if ( pref.widthHasBeenSet == false && pref.heightHasBeenSet == true ){
+        if ( pref.widthHasBeenSet === false && pref.heightHasBeenSet === true ){
             pref.width = Math.round(( pref.height / pref.ratio ) * ( src.height / src.width ));
         }
         
         // scale the image to the default width
-        if ( pref.widthHasBeenSet == false && pref.heightHasBeenSet == false ){
+        if ( pref.widthHasBeenSet === false && pref.heightHasBeenSet === false ){
             pref.height = Math.round(( pref.width * ( src.width / src.height )) * pref.ratio );
         }
         
@@ -82,7 +82,7 @@ var ascii = function(){
             imgData = canvas.getImageData( 0 , 0 , pref.width , pref.height );
         
         // init the rows and columns
-        var row = 0;
+        var row = 0,
             column = 0;
         
         // the magic
@@ -124,7 +124,7 @@ var ascii = function(){
                     pref.theme = i;
                 }
                 
-                if ( err == true ){
+                if ( err === true ){
                     error( "invalid theme selection" );
                 }
             }
@@ -171,6 +171,6 @@ var ascii = function(){
     var error = function( message ){
         var string = "ascii.js err: " + message;
         console.log( string );
-    }
+    };
     
-}
+};
