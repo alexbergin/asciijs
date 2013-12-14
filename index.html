@@ -19,16 +19,20 @@
         </style>
     </head>
     <body>
-        <img id="coolgif" src="38.gif" />
+        <img id="coolgif" src="example.gif" />
         <div id="textOutput"></div>
     </body>
     <script>
         window.onload = function(){
+            
+            // define asciijs object
             var myASCII = new ascii();
-        
+            
+            // set certain preferences
             myASCII.set.target( document.getElementById("textOutput"));
             myASCII.set.width( 65 );
             
+            // update our ascii with the gif!
             setInterval( function(){
                 myASCII.gen( document.getElementById("coolgif"));
             } , 1000 / 24 );
