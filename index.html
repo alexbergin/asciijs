@@ -6,40 +6,46 @@
             
             html , body {
                 font-family: monospace;
+                font-size: 8px;
                 padding: 0;
                 margin: 0;
+                width: 100%;
+                height: 100%;
+                background-color:#000;
             }
             
             #textOutput {
-                /*
+                color: #0f0;
                 position: absolute;
                 top: 0;
-                left: 530px;
-                */
+                left: 500px;
             }
             
         </style>
     </head>
     <body>
-        <img id="coolgif" src="example.gif" />
+        <img id="examplegif" src="example.gif" />
         <div id="textOutput"></div>
     </body>
     <script>
         window.onload = function(){
             
-            // define asciijs object
+            // define asciijs object and image
             var myASCII = new ascii();
+            var image = document.getElementById("examplegif");
             
             // set certain preferences
             myASCII.set.target( document.getElementById("textOutput"));
-            myASCII.set.theme( "dot" );
-            myASCII.set.width( 80 );
-            myASCII.set.height( 42 );
+            myASCII.set.width( 100 );
+            myASCII.set.height( 56 );
+            myASCII.set.theme( "altInvert" );
+            myASCII.set.mono( true );
             
             // update our ascii with the gif!
             setInterval( function(){
-                myASCII.gen( document.getElementById("coolgif"));
+                myASCII.gen( image );
             } , 1000 / 60 );
+            
         }
     </script>
 </html>

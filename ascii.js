@@ -11,6 +11,7 @@ var ascii = function(){
         heightHasBeenSet: false,
         widthHasBeenSet: false,
         ratio: 0.5 / 1,
+        mono: true,
     };
     
     // add themes as objects here, make sure the char value is ordered lightest to darkest
@@ -31,11 +32,11 @@ var ascii = function(){
                 src: "alex bergin",
             },{
                 id: "alt",
-                char: " .,;:-'!+=/OXM",
+                char: " .`,'-_~;:!/+=O0X8M",
                 src: "alex bergin",
             },{
                 id: "altInvert",
-                char: "MXO/=+!’-:;,. ",
+                char: "M8X0O=+/!:;~_-',`. ",
                 src: "alex bergin",
             },{
                 id: "mono",
@@ -43,7 +44,7 @@ var ascii = function(){
                 src: "alex bergin",
             },{
                 id: "dot",
-                char: "'\"*@",
+                char: " '\"*@",
                 src: "alex bergin",
             }
         ],
@@ -98,10 +99,20 @@ var ascii = function(){
         for ( var i = 0 , idur = imgData.data.length ; i < idur ; i += 4 ){
             
             // read the opacity / greyscale value of the pixel we're on
-            var value = ((( 255 - (( imgData.data[ i ] + imgData.data[ i + 1 ] + imgData.data[ i + 2 ] ) / 3 )) * ( imgData.data[ i + 3 ] / 255 )) / 255 ),
+            var r = imgData.data[ i + 0 ],
+                g = imgData.data[ i + 1 ],
+                b = imgData.data[ i + 2 ],
+                a = imgData.data[ i + 3 ],
+                value = ((( 255 - (( r + g + b ) / 3 )) * ( a / 255 )) / 255 ),
                 char = data.themes[pref.theme].char.charAt( Math.floor( value * ( data.themes[ pref.theme ].char.length - 1 )));
+                
             
-            outputText += char;
+            if ( pref.mono === true ){
+                outputText += char;
+            } else {
+                outputText += "<span style='color:rgb("+r+","+g+","+b+")'>" + char + "</span>";
+            }
+            
             
             // determine where to put the breaks
             // this is where you'd want to modify asciijs to output to console
@@ -173,6 +184,14 @@ var ascii = function(){
             
             pref.heightHasBeenSet = true;
         },
+        
+        mono: function( bool ){
+            if ( bool == false ){
+                pref.mono = false;
+            } else {
+                pref.mono = true;
+            }
+        }
         
     };
     
