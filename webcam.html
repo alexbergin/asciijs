@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="ascii.js"></script>
+        <style>
+            
+            html , body {
+                font-family: monospace;
+                font-size: 8px;
+                padding: 0;
+                margin: 0;
+                width: 100%;
+                height: 100%;
+                background-color:#000;
+            }
+            
+            html {
+                overflow: hidden;
+            }
+            
+            img , #webcam {
+                position: absolute;
+                opacity: 0;
+            }
+            
+            #textOutput {
+                margin-top: -10%;
+                color: #0f0;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <video autoplay id="webcam"></video>
+        <div id="textOutput"></div>
+    </body>
+    <script>
+        window.onload = function(){
+            
+            // define asciijs object
+            var myASCII = new ascii();
+            
+            // set certain preferences
+            myASCII.set.target( document.getElementById("textOutput"));
+            myASCII.set.width( Math.round( window.innerWidth / 5 ));
+            myASCII.set.height( Math.round( window.innerHeight / 7 ));
+            myASCII.set.theme( "altInvert" );
+            myASCII.set.mono( true );
+            
+            window.onresize = function(){
+                myASCII.set.width( Math.round( window.innerWidth / 5 ));
+                myASCII.set.height( Math.round( window.innerHeight / 7 ));
+            }
+            
+            // update our ascii with the gif!
+            
+            var videoElement = document.getElementById('webcam');
+            
+            navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+            
+            navigator.getUserMedia({
+                video: true,
+                audio: false,
+            }, function(localMediaStream) {
+                navigator.getUserMedia({video: true}, function(stream) {
+                videoElement.src = window.URL.createObjectURL(stream);
+                localMediaStream = stream;
+            });
+                
+                setInterval( function(){
+                    
+                    myASCII.gen( videoElement );
+                
+                } , 1000 / 60 );
+                
+                // Note: onloadedmetadata doesn't fire in Chrome when using it with getUserMedia.
+                // See crbug.com/110938.
+                videoElement.onloadedmetadata = function(e) {
+                    console.log('Something happened. Do some stuff');
+                };
+                
+            }, function(e) {
+                if (e.code === 1) {
+                    console.log('User declined permissions.');
+                }
+            });
+            
+        }
+    </script>
+</html>
