@@ -15,6 +15,7 @@ var ascii = function(){
     
     // add themes as objects here, make sure the char value is ordered lightest to darkest
     // and that id is unique
+    // use the escape character to add quotes
     
     // if you take a theme you didn't make please include the src to not be rude
     
@@ -35,6 +36,14 @@ var ascii = function(){
             },{
                 id: "altInvert",
                 char: "MXO/=+!’-:;,. ",
+                src: "alex bergin",
+            },{
+                id: "mono",
+                char: "-+",
+                src: "alex bergin",
+            },{
+                id: "dot",
+                char: "'\"*@",
                 src: "alex bergin",
             }
         ],

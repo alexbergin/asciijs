@@ -11,9 +11,11 @@
             }
             
             #textOutput {
+                /*
                 position: absolute;
                 top: 0;
                 left: 530px;
+                */
             }
             
         </style>
@@ -30,13 +32,14 @@
             
             // set certain preferences
             myASCII.set.target( document.getElementById("textOutput"));
-            myASCII.set.theme( "alt" );
-            myASCII.set.width( 65 );
+            myASCII.set.theme( "dot" );
+            myASCII.set.width( 80 );
+            myASCII.set.height( 42 );
             
             // update our ascii with the gif!
             setInterval( function(){
                 myASCII.gen( document.getElementById("coolgif"));
-            } , 1000 / 24 );
+            } , 1000 / 60 );
         }
     </script>
 </html>
