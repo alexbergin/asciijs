@@ -4,7 +4,7 @@ A javascript library designed to let you easily output ascii artwork from still 
 
 ## Usage
 
-First include the ascii.js in your head
+Include the ascii.js in your <head>
     
     <script src="ascii.js"></script>
     
@@ -30,8 +30,8 @@ Next we take our image and pass it to the gen function of asciijs
     <script>
         window.onload = function(){
             var myASCII = new ascii();
-            myASCII.set.target( document.getElementById("coolcat") );
-            myASCII.gen( document.getElementById("catimage.png") );
+            myASCII.set.target( document.getElementById("textholder") );
+            myASCII.gen( document.getElementById("catimage") );
         }
     </script>
     
@@ -64,7 +64,7 @@ Applys the color of the pixel the character is replacing to the text if set to f
 
 ### Target
 
-Determines what object you will place the outputted html into. Note: make sure you are using a monospace typeface for best effect.
+Determines what object you will place the outputted html into. If no target is set, the default target is set to the body. Note: make sure you are using a monospace typeface for best effect.
 
     myASCII.set.target( object );
     
