@@ -124,7 +124,7 @@ var ascii = function(){
         pref.target.innerHTML = outputText;
     };
     
-    // preference setting function
+    // preference setting functions
     this.set = {
         
         // set the theme of the ascii, return error if it doesn't exist
@@ -177,8 +177,9 @@ var ascii = function(){
             pref.heightHasBeenSet = true;
         },
         
+        // set use of color / monochome
         mono: function( bool ){
-            if ( bool == false ){
+            if ( bool === false ){
                 pref.mono = false;
             } else {
                 pref.mono = true;
