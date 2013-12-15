@@ -36,7 +36,7 @@ var ascii = function(){
                 src: "alex bergin",
             },{
                 id: "dot",
-                char: " '\"*@",
+                char: " .,`'\":;*",
                 src: "alex bergin",
             }
         ],

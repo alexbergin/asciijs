@@ -11,7 +11,7 @@
                 margin: 0;
                 width: 100%;
                 height: 100%;
-                background-color:#000;
+                background-color:rgba(21,29,35,1);
             }
             
             html {
@@ -25,7 +25,7 @@
             
             #textOutput {
                 margin-top: -10%;
-                color: #0f0;
+                color: rgba(12,245,125,1);
             }
             
         </style>
@@ -44,7 +44,7 @@
             myASCII.set.target( document.getElementById("textOutput"));
             myASCII.set.width( Math.round( window.innerWidth / 5 ));
             myASCII.set.height( Math.round( window.innerHeight / 7 ));
-            myASCII.set.theme( "altInvert" );
+            myASCII.set.theme( "defaultInvert" );
             myASCII.set.mono( true );
             
             window.onresize = function(){
