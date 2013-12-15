@@ -4,7 +4,7 @@ A javascript library designed to let you easily output ascii artwork from still 
 
 ## Usage
 
-Include the ascii.js in your <head>
+Include the ascii.js in your head
     
     <script src="ascii.js"></script>
     
