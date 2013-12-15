@@ -50,7 +50,9 @@ Determines what ascii theme will be used to generate your outputted text. Themes
     
     myASCII.set.theme( string );
     
-The current list of themes is: `default` , `defaultInvert` , `mono` , & `dot`.
+The current list of themes is: `"default"` , `"defaultInvert"` , `"mono"` , & `"dot"`.
+
+Default value: `"default"`
     
 ------------
 
@@ -59,14 +61,18 @@ The current list of themes is: `default` , `defaultInvert` , `mono` , & `dot`.
 Applys the color of the pixel the character is replacing to the text if set to false, uses the containers text color if set to true. Very render intensive to display in full color, poor for animations.
 
     myASCII.set.mono( bool );
-    
+
+Default value: `true`
+
 ------------
 
 ### Target
 
-Determines what object you will place the outputted html into. If no target is set, the default target is set to the body. Note: make sure you are using a monospace typeface for best effect.
+Determines what object you will place the outputted html into. Note: make sure you are using a monospace typeface for best effect.
 
     myASCII.set.target( object );
+    
+Default value: `document.body`
     
 ------------
 
@@ -76,6 +82,8 @@ Sets the width in characters of your outputted ascii. If width is unset and heig
 
     myASCII.set.height( int );
     
+Default value: `128`
+    
 ------------
 
 ### Height
@@ -83,5 +91,7 @@ Sets the width in characters of your outputted ascii. If width is unset and heig
 Sets the height in characters of your outputted ascii. If height is unset and width is set, height is determined in proportion to the width you've chosen and the width of the source image. If neither height nor width are set, the default width will be used and the height will be scaled to match your source image.
 
     myASCII.set.height( int );
+    
+Default value: `48`
     
 ------------
