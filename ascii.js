@@ -124,7 +124,21 @@ var ascii = function(){
         pref.target.innerHTML = outputText;
     };
     
-    // preference setting functions
+    // mass preference setting
+    this.settings = function( prefs ){
+        if ( typeof prefs != "undefined" ){
+            var props = [ "theme" , "target" , "width" , "height" , "mono" ];
+            for( var i = 0 , idur = props.length ; i < idur ; i++ ){
+                if ( prefs.hasOwnProperty( props[i] )){
+                    this.set[ props[i] ]( prefs[ props[i] ]);
+                }
+            }
+        } else {
+            error( "no preferences defined" );
+        }
+    };
+    
+    // individual preference setting functions
     this.set = {
         
         // set the theme of the ascii, return error if it doesn't exist

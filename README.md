@@ -42,6 +42,18 @@ For a more thorough example, see the example index page.
 
 The following are all options you can set to determine the style of your output ASCII. These commands are assuming you've initialized the asciijs function to the variable `myASCII` and that your content has fully loaded.
 
+In addition to being able to set all these preferences individually, you can optionally define them with one object using the settings function:
+
+    myASCII.settings({
+        theme: "defaultInvert",
+        target: document.body,
+        width: 128,
+        height: 48,
+        mono: true
+    });
+    
+Anywhere between an individual preference and all of them at once can be set in this manner. Invalid properties will be ignored and will not throw an error.
+
 ------------
 
 ### Theme

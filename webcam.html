@@ -47,10 +47,17 @@
             myASCII.set.theme( "defaultInvert" );
             myASCII.set.mono( true );
             
+            myASCII.settings({
+                target: document.getElementById("textOutput"),
+                width: 30,
+                height: 30,
+                theme: "mono",
+            });
+            
             window.onresize = function(){
                 myASCII.set.width( Math.round( window.innerWidth / 5 ));
                 myASCII.set.height( Math.round( window.innerHeight / 7 ));
-            }
+            };
             
             // update our ascii with the gif!
             
