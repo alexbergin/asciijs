@@ -127,7 +127,12 @@ var ascii = function(){
     // mass preference setting
     this.settings = function( prefs ){
         if ( typeof prefs != "undefined" ){
-            var props = [ "theme" , "target" , "width" , "height" , "mono" ];
+            var props = [];
+            for( var properties in this.set ){
+                if ( this.set.hasOwnProperty( properties )){
+                    props.push( properties.toString() );   
+                }
+            }
             for( var i = 0 , idur = props.length ; i < idur ; i++ ){
                 if ( prefs.hasOwnProperty( props[i] )){
                     this.set[ props[i] ]( prefs[ props[i] ]);
