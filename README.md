@@ -64,6 +64,13 @@ Determines what ascii theme will be used to generate your outputted text. Themes
     
 The current list of themes is: `"default"` , `"defaultInvert"` , `"mono"` , & `"dot"`.
 
+In addition, you can define your own custom theme. Simply pass an object with a unique id and define your theme to the char parameter, ordering characters from lightest to darkest. This will add your theme to the theme array and apply it as your current theme.
+
+    myASCII.set.theme({
+        id: string,
+        char: string,
+    });
+
 Default value: `"default"`
     
 ------------

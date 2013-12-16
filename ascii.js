@@ -147,16 +147,28 @@ var ascii = function(){
     this.set = {
         
         // set the theme of the ascii, return error if it doesn't exist
+        // create and apply a custom theme
         theme: function( type ){
-            var err = true;
-            for( var i = 0 , idur = data.themes.length ; i < idur ; i++ ){
-                if ( data.themes[i].id == type ){
-                    err = false;
-                    pref.theme = i;
+            if ( typeof type == "object" || typeof type == "string" ){
+                if ( type.hasOwnProperty("id") && type.hasOwnProperty("char")){
+                    data.themes.push({
+                        id: type.id,
+                        char: type.char,
+                    });
+                    
+                    pref.theme = data.themes.length - 1;
                 }
-                
-                if ( err === true ){
-                    error( "invalid theme selection" );
+            } else {
+                var err = true;
+                for( var i = 0 , idur = data.themes.length ; i < idur ; i++ ){
+                    if ( data.themes[i].id == type ){
+                        err = false;
+                        pref.theme = i;
+                    }
+                    
+                    if ( err === true ){
+                        error( "invalid theme selection" );
+                    }
                 }
             }
         },
