@@ -149,7 +149,7 @@ var ascii = function(){
         // set the theme of the ascii, return error if it doesn't exist
         // create and apply a custom theme
         theme: function( type ){
-            if ( typeof type == "object" || typeof type == "string" ){
+            if ( typeof type == "object" ){
                 if ( type.hasOwnProperty("id") && type.hasOwnProperty("char")){
                     data.themes.push({
                         id: type.id,
