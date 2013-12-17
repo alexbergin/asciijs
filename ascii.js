@@ -165,10 +165,10 @@ var ascii = function(){
                         err = false;
                         pref.theme = i;
                     }
-                    
-                    if ( err === true ){
-                        error( "invalid theme selection" );
-                    }
+                }
+                
+                if ( err === true ){
+                    error( "invalid theme selection" );
                 }
             }
         },
